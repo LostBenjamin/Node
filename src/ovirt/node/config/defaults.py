@@ -465,7 +465,7 @@ class NicBonding(NodeConfigFileSection):
             raise InvalidData("Slaves must be a list")
         options = options or ""
         return {"OVIRT_BOND_SLAVES": ",".join(slaves) if slaves else None,
-                "OVIRT_BOND_OPTIONS": options if name else None}
+                "OVIRT_BOND_OPTIONS": options if options else None}
 
     def retrieve(self):
         cfg = super(NicBonding, self).retrieve()
